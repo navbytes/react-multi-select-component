@@ -3,9 +3,9 @@
  */
 import React from "react";
 
+import SelectItem from "./select-item";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { Option } from "../lib/interfaces";
-import SelectItem from "./select-item";
 
 interface ISelectListProps {
   options: Option[];
@@ -22,7 +22,7 @@ const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
     onChange(
       checked
         ? [...value, option]
-        : value.filter((o: any) => o.value !== option.value)
+        : value.filter((o: any) => o.value !== option.value),
     );
   };
 

@@ -11,6 +11,6 @@ export function filterOptions(options: Option[], filter?: string): Option[] {
     ({ label, value }) =>
       label != null &&
       value != null &&
-      label.toLowerCase().includes(filter.toLowerCase())
+      label.toLowerCase().includes(filter.toLowerCase()),
   );
 }

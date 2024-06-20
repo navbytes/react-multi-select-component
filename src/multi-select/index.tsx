@@ -1,10 +1,10 @@
-import "../style.css";
-
 import React from "react";
 
+import "../style.css";
+
+import Dropdown from "./dropdown";
 import { MultiSelectProvider } from "../hooks/use-multi-select";
 import { SelectProps } from "../lib/interfaces";
-import Dropdown from "./dropdown";
 
 const MultiSelect = (props: SelectProps) => (
   <MultiSelectProvider props={props}>

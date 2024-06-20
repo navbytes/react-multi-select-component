@@ -23,7 +23,7 @@ type MapOfStrings = { [key: string]: string };
 export function filterOptions(
   options: Option[],
   filter?: string,
-  substitutions?: MapOfStrings
+  substitutions?: MapOfStrings,
 ): Option[] {
   // If the filter is blank, return the full list of Options.
   if (!filter) {
@@ -41,7 +41,7 @@ export function filterOptions(
         option: option,
         score: typeaheadSimilarity(
           cleanUpText(option.label, substitutions),
-          cleanFilter
+          cleanFilter,
         ),
       }))
       // Only include matches of the entire substring, with a slight
@@ -51,8 +51,8 @@ export function filterOptions(
           pair.score >=
           Math.max(
             cleanFilter.length - 2,
-            cleanFilter.length
-          ) /** Filter text might have length less than 2 */
+            cleanFilter.length,
+          ) /** Filter text might have length less than 2 */,
       )
       // Sort 'em by order of their score.
       .sort((a, b) => b.score - a.score)
@@ -143,7 +143,7 @@ export function typeaheadSimilarity(a: string, b: string): number {
  */
 export function cleanUpText(
   input?: string,
-  substitutions?: MapOfStrings
+  substitutions?: MapOfStrings,
 ): string {
   if (!input) {
     return "";

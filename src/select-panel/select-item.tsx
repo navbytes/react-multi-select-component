@@ -3,10 +3,10 @@
  */
 import React, { useRef } from "react";
 
+import DefaultItemRenderer from "./default-item";
 import { useKey } from "../hooks/use-key";
 import { KEY } from "../lib/constants";
 import { Option } from "../lib/interfaces";
-import DefaultItemRenderer from "./default-item";
 
 interface ISelectItemProps {
   itemRenderer;

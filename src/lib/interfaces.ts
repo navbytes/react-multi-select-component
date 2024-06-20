@@ -10,7 +10,7 @@ export interface Option {
 export interface SelectProps {
   options: Option[];
   value: Option[];
-  onChange?;
+  onChange?: (selected: Option[]) => void;
   valueRenderer?: (selected: Option[], options: Option[]) => ReactNode;
   ItemRenderer?;
   ArrowRenderer?: ({ expanded }) => JSX.Element;
@@ -21,7 +21,7 @@ export interface SelectProps {
   hasSelectAll?: boolean;
   filterOptions?: (
     options: Option[],
-    filter: string
+    filter: string,
   ) => Promise<Option[]> | Option[];
   overrideStrings?: { [key: string]: string };
   labelledBy: string;

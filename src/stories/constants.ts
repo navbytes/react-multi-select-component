@@ -1,4 +1,6 @@
-export const options = [
+import { Option } from "../";
+
+export const defaultOptions: Option[] = [
   { label: "Grapes 🍇", value: "grapes" },
   { label: "Mango 🥭", value: "mango" },
   { label: "Strawberry 🍓", value: "strawberry", disabled: true },

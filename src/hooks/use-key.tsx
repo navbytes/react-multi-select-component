@@ -36,11 +36,11 @@ const defaultOptions = {
 function useKey(
   input: string | number | Array<string | number>,
   callback: (e: KeyboardEvent) => any,
-  opts?: Options
+  opts?: Options,
 ): void {
   const keyList: Array<string | number> = useMemo(
     () => (Array.isArray(input) ? input : [input]),
-    [input]
+    [input],
   );
   const options = Object.assign({}, defaultOptions, opts);
   const { when, eventTypes } = options;
@@ -57,7 +57,7 @@ function useKey(
         callbackRef.current(e);
       }
     },
-    [keyList]
+    [keyList],
   );
 
   useEffect((): any => {

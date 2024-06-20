@@ -33,7 +33,7 @@ interface MultiSelectProviderProps {
 }
 
 const MultiSelectContext = React.createContext<MultiSelectContextProps>(
-  {} as MultiSelectContextProps
+  {} as MultiSelectContextProps,
 );
 
 export const MultiSelectProvider = ({

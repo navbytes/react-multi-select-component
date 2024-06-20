@@ -5,15 +5,15 @@
  */
 import React, { useEffect, useRef, useState } from "react";
 
+import { Arrow } from "./arrow";
+import { DropdownHeader } from "./header";
+import { Loading } from "./loading";
 import { useDidUpdateEffect } from "../hooks/use-did-update-effect";
 import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
 import SelectPanel from "../select-panel";
 import { Cross } from "../select-panel/cross";
-import { Arrow } from "./arrow";
-import { DropdownHeader } from "./header";
-import { Loading } from "./loading";
 
 const Dropdown = () => {
   const {

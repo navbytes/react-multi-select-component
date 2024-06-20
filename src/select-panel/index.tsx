@@ -3,7 +3,7 @@
  * user selects the component.  It encapsulates the search filter, the
  * Select-all item, and the list of options.
  */
- import React, {
+import React, {
   useCallback,
   useEffect,
   useMemo,
@@ -11,14 +11,14 @@
   useState,
 } from "react";
 
+import { Cross } from "./cross";
+import SelectItem from "./select-item";
+import SelectList from "./select-list";
 import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
 import { debounce } from "../lib/debounce";
 import { filterOptions } from "../lib/simple-match-utils";
-import { Cross } from "./cross";
-import SelectItem from "./select-item";
-import SelectList from "./select-list";
 
 enum FocusType {
   SEARCH = 0,
@@ -51,7 +51,7 @@ const SelectPanel = () => {
   const [focusIndex, setFocusIndex] = useState(0);
   const debouncedSearch = useCallback(
     debounce((query) => setSearchTextForFilter(query), debounceDuration),
-    []
+    [],
   );
 
   const skipIndex = useMemo(() => {
@@ -78,7 +78,7 @@ const SelectPanel = () => {
       const finalSelectedValues = [...selectedValues, ...filteredValues];
 
       return (customFilterOptions ? filteredOptions : options).filter((o) =>
-        finalSelectedValues.includes(o.value)
+        finalSelectedValues.includes(o.value),
       );
     }
 
@@ -163,11 +163,10 @@ const SelectPanel = () => {
     const filteredOptionsList = filteredOptions.filter((o) => !o.disabled);
     return [
       filteredOptionsList.every(
-        (o) => value.findIndex((v) => v.value === o.value) !== -1
+        (o) => value.findIndex((v) => v.value === o.value) !== -1,
       ),
       filteredOptionsList.length !== 0,
     ];
-    // eslint-disable-next-line
   }, [filteredOptions, value]);
 
   useEffect(() => {
